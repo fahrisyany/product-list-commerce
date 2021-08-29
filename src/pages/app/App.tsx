@@ -34,7 +34,7 @@ const App: React.FC = () => {
           <Row className="justify-content-center">
             {datas.length > 0 && datas.map((item, i) => {
               return (
-                <Col key={i} xs={'auto'} md={4} lg={2} xl={'auto'}><CardItem {...item} /> </Col>
+                <Col key={i} xs={'auto'} md={4} lg={2} xl={2}><CardItem {...item} /> </Col>
               )
             })}
           </Row>
