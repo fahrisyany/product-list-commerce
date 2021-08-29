@@ -1,0 +1,22 @@
+.card {
+  width: 18rem;
+  height: 28rem;
+  margin-bottom: 1.75em;
+  box-sizing: border-box;
+  .retail-price-label {
+    text-decoration: line-through;
+  }
+
+  &-img-top {
+    padding: 1em;
+    // border: solid;
+  }
+
+  &-body {
+    padding: 1em;
+    // border-top: solid;
+  }
+
+  .sales-price-label {
+  }
+}
