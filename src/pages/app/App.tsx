@@ -30,11 +30,11 @@ const App: React.FC = () => {
         <DropdownCustom sortValue={sortValue} handleSortItems={handleSortItems} />
       </header>
       <main className="App-body">
-        <Container fluid className="px-0">
-          <Row>
+        <Container fluid>
+          <Row className="justify-content-center">
             {datas.length > 0 && datas.map((item, i) => {
               return (
-                <Col key={i} ><CardItem {...item} /> </Col>
+                <Col key={i} xs={'auto'} md={4} lg={2} xl={'auto'}><CardItem {...item} /> </Col>
               )
             })}
           </Row>

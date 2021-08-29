@@ -5,6 +5,8 @@ import './CardItem.scss'
 
 const CardItem: React.FC<ItemInterface> = ({ imageUrl, name, salePrice, retailPrice, quantityAvailable }: ItemInterface) => {
 
+    const handleCurrencyFormat = (num: number) => (num / 100).toLocaleString("en-US", { style: "currency", currency: "USD" });
+
     const handleIsItemAvialable = (): ReactElement<any, any> => (
         quantityAvailable < 1 ?
             <Card.Text as={'h4'}>
@@ -12,23 +14,25 @@ const CardItem: React.FC<ItemInterface> = ({ imageUrl, name, salePrice, retailPr
             </Card.Text> : (
                 <>
                     {retailPrice > 0 ?
-                        <Card.Text className='retail-price-label'>
-                            AUS {retailPrice}
+                        <Card.Text className='retail-price-label' as={'span'}>
+                            {handleCurrencyFormat(retailPrice)}
                         </Card.Text> : ""
                     }
-                    <Card.Text className='sales-price-label'>
-                        AUS {salePrice}
+                    <Card.Text className='sales-price-label' as={'h4'}>
+                        {handleCurrencyFormat(salePrice)}
                     </Card.Text>
                 </>
             )
     )
 
     return (
-        <Card className='card-container'>
+        <Card>
             <Card.Img variant="top" src={imageUrl} />
-            <Card.Body>
+            <Card.Body className='d-flex justify-content-between flex-column'>
                 <Card.Title>{name}</Card.Title>
-                {handleIsItemAvialable()}
+                <div className='card-texts'>
+                    {handleIsItemAvialable()}
+                </div>
             </Card.Body>
         </Card>
     )

@@ -1,22 +1,31 @@
 .card {
-  width: 18rem;
-  height: 28rem;
+  width: 16rem;
+  max-width: 100%;
+  height: 30rem;
+  max-height: 100%;
+
   margin-bottom: 1.75em;
   box-sizing: border-box;
-  .retail-price-label {
-    text-decoration: line-through;
-  }
+  border-radius: 0 !important;
 
   &-img-top {
     padding: 1em;
-    // border: solid;
   }
 
   &-body {
     padding: 1em;
-    // border-top: solid;
   }
 
+  .retail-price-label {
+    text-decoration: line-through;
+    font-weight: 600;
+  }
   .sales-price-label {
+    clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 0 49%, 0% 0%);
+    background-color: #e62229;
+    color: #fff;
+    width: 100px;
+    padding: 0.25em;
+    margin: auto;
   }
 }
