@@ -1,6 +1,6 @@
 # product-list-commerce
 
-## My University
+## Product list Catch.com.au 
 
 An application used to list and sort products from catch.com.au product list. Built with React, Typescript/JS, Redux-Saga, Bootsrap 5, and SCSS.
 
